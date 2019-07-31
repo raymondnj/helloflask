@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 {% from 'macros.html' import qux %}
+{% from 'macros.html' import static_file %}
+
+{% block styles %}
+{{ static_file('css', 'https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css', local=False) }}
+{% endblock %}
+
+{% block scripts %}
+{{ static_file('js', 'https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js', local=False) }}
+{{ static_file('js', 'https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js', local=False) }}
+{{ static_file('js', 'https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js', local=False) }}
+{% endblock %}
 
 {% block content %}
 {% set name='baz' %}
